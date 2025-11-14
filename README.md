@@ -31,3 +31,8 @@
 
 运行主程序：
 ```
+python main.py
+```
+
+- 笔记保存在`data/notes/`目录下，按学科分类。
+- 复习卡片保存在`data/cards/`目录下。
