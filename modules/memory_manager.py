@@ -17,7 +17,10 @@ class MemoryManager:
         if not os.path.exists(path):
             return []
         with open(path, "r", encoding="utf-8") as f:
-            data = json.load(f)
+            content = f.read().strip()
+            if not content:
+                return []
+            data = json.loads(content)
         return data[-self.max_items:]
 
     def update(self, subject, question, answer):

@@ -10,7 +10,12 @@ def generate_card(subject, question, answer):
     path = _card_path(subject)
     card = {"question": question, "answer": answer}
     if os.path.exists(path):
-        cards = json.load(open(path, "r", encoding="utf-8"))
+        with open(path, "r", encoding="utf-8") as f:
+            content = f.read().strip()
+            if not content:
+                cards = []
+            else:
+                cards = json.loads(content)
     else:
         cards = []
     cards.append(card)
@@ -25,6 +30,10 @@ def get_random_card():
     if not files:
         return "暂无复习卡片", ""
     file = random.choice(files)
-    cards = json.load(open(os.path.join(base, file), "r", encoding="utf-8"))
+    with open(os.path.join(base, file), "r", encoding="utf-8") as f:
+        content = f.read().strip()
+        if not content:
+            return "暂无复习卡片", ""
+        cards = json.loads(content)
     card = random.choice(cards)
     return card["question"], card["answer"]
