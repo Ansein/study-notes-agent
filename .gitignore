@@ -1,0 +1,44 @@
+# ----- Python 缓存文件 -----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ----- 虚拟环境 -----
+venv/
+.env/
+.venv/
+
+# ----- IDE/编辑器文件 -----
+.vscode/
+.idea/
+*.swp
+
+# ----- 项目数据文件（可根据需要调整） -----
+# 自动生成的笔记文件
+data/notes/
+
+# 上下文缓存
+data/memory.json
+
+# 嵌入索引（Sentence-BERT）
+data/embeddings/
+
+# ----- 日志文件 -----
+*.log
+
+# ----- OS 系统文件 -----
+.DS_Store
+Thumbs.db
+
+# ----- Streamlit / Gradio 配置文件（当前你已转为 CLI，可忽略） -----
+.streamlit/
+
+# ----- Jupyter -----
+.ipynb_checkpoints/
+
+# ----- Python build -----
+build/
+dist/
+*.egg-info/
+
