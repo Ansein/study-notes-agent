@@ -37,7 +37,7 @@ def main():
             print("输入概念或问题，智能体会以合适人格回答并自动保存笔记。")
             last_subject = None
             while True:
-                user_input = input("请输入你的问题: ").strip()
+                user_input = input("请输入你的问题（输入 'q' 退出）: ").strip()
                 if user_input.lower() == 'q':
                     break
                 if user_input:
