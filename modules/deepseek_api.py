@@ -3,6 +3,8 @@ import os
 from dotenv import load_dotenv
 from openai import OpenAI
 
+load_dotenv()
+
 def query_deepseek(user_input: str, persona: str, context: list):
     """
     向 DeepSeek API 发送请求。
@@ -16,7 +18,7 @@ def query_deepseek(user_input: str, persona: str, context: list):
     messages.append({"role": "user", "content": user_input})
 
     client = OpenAI(
-        api_key="sk-c6288fcc0af5417091e8600660ab185e",
+        api_key=os.getenv("DEEPSEEK_API_KEY"),
         base_url="https://api.deepseek.com"
     )
 
